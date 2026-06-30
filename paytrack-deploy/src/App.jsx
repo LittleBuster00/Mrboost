@@ -108,7 +108,7 @@ const CSS = `
 
 // ─── PASSWORD CONFIG ──────────────────────────────────────────────────────────
 // Ganti nilai di bawah ini dengan password yang kamu inginkan
-const APP_PASSWORD = "payroll2025";
+const APP_PASSWORD = "punyagerar";
 
 // ─── LOGIN SCREEN ─────────────────────────────────────────────────────────────
 function LoginScreen({ onLogin }) {
