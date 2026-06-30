@@ -173,8 +173,6 @@ export default function App() {
   const [authed, setAuthed] = useState(!!sessionStorage.getItem("pr_auth"));
   const navigate = (id) => { setPage(id); setNavOpen(false); };
 
-  // Tampilkan login jika belum autentikasi
-  if (!authed) return <LoginScreen onLogin={() => setAuthed(true)} />;
 
   useEffect(()=>{
     (async()=>{
@@ -188,7 +186,10 @@ export default function App() {
   const saveW=async v=>{setW(v);await sSave("pr2_w",v);};
   const saveL=async v=>{setL(v);await sSave("pr2_l",v);};
   const saveP=async v=>{setP(v);await sSave("pr2_p",v);};
-
+  
+  // Tampilkan login jika belum autentikasi
+  if (!authed) return <LoginScreen onLogin={() => setAuthed(true)} />;
+  
   if(!ready) return(
     <div style={{display:"flex",height:"100vh",alignItems:"center",justifyContent:"center",background:"#111318",color:"#4ade80",fontFamily:"Syne,sans-serif",fontSize:16,gap:12}}>
       <span style={{animation:"spin 1s linear infinite",display:"inline-block"}}>⟳</span> Memuat sistem…
